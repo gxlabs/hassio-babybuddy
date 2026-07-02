@@ -1,0 +1,32 @@
+name: Baby Buddy (gxlabs)
+version: "0.1.0"
+slug: babybuddy_gxlabs
+description: Baby Buddy fork with per-event image uploads.
+url: https://github.com/gxlabs/hassio-babybuddy
+arch:
+  - amd64
+  - aarch64
+init: false
+startup: application
+boot: auto
+map:
+  - share:rw
+ports:
+  "8000/tcp": 8001
+ports_description:
+  "8000/tcp": Web + REST API (host port 8001 for iOS-app compatibility)
+panel_icon: mdi:baby-face-outline
+panel_title: Baby Buddy
+panel_admin: false
+ingress: true
+ingress_port: 8000
+ingress_stream: false
+options:
+  allowed_hosts: "*"
+  csrf_trusted_origins: ""
+  debug: false
+schema:
+  allowed_hosts: str
+  csrf_trusted_origins: str
+  debug: bool
+image: null
