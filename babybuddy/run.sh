@@ -38,9 +38,9 @@ cd /app
 log "Applying migrations..."
 python3 manage.py migrate --noinput
 
-log "Starting gunicorn on 0.0.0.0:${PORT:-8000}"
+log "Starting gunicorn on [::]:${PORT:-8000} (dual-stack)"
 exec gunicorn babybuddy.wsgi:application \
-    --bind "0.0.0.0:${PORT:-8000}" \
+    --bind "[::]:${PORT:-8000}" \
     --workers 2 \
     --timeout 60 \
     --access-logfile - \
