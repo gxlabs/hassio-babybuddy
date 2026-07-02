@@ -41,4 +41,6 @@ COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
 EXPOSE 8000
+# Bypass the base image's s6-overlay init — it strips container ENV before running CMD.
+ENTRYPOINT []
 CMD ["/run.sh"]

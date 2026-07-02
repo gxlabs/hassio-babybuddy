@@ -1,6 +1,12 @@
 #!/bin/sh
 set -e
 
+# Belt + suspenders in case the base image's init cleared these.
+export DJANGO_SETTINGS_MODULE="${DJANGO_SETTINGS_MODULE:-babybuddy.settings.production}"
+export DATABASE_URL="${DATABASE_URL:-sqlite:////data/data/db.sqlite3}"
+export MEDIA_ROOT="${MEDIA_ROOT:-/data/media}"
+export PORT="${PORT:-8000}"
+
 log() { echo "[babybuddy_gxlabs] $*"; }
 
 CONFIG=/data/options.json
