@@ -1,8 +1,0 @@
-build_from:
-  amd64: ghcr.io/hassio-addons/base:15.0.11
-  aarch64: ghcr.io/hassio-addons/base:15.0.11
-labels:
-  org.opencontainers.image.title: Baby Buddy (gxlabs)
-  org.opencontainers.image.description: Baby Buddy fork with per-event image uploads
-  org.opencontainers.image.source: https://github.com/gxlabs/hassio-babybuddy
-  org.opencontainers.image.licenses: BSD-2-Clause

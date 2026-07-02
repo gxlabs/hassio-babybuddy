@@ -1,5 +1,4 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/hassio-addons/base:latest
 
 ENV LANG=C.UTF-8 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -10,7 +9,7 @@ ENV LANG=C.UTF-8 \
     MEDIA_ROOT=/data/media \
     PORT=8000
 
-# The HA add-on base image is Alpine-flavored; install runtime + build deps.
+# Runtime + build deps for Pillow, psycopg, gunicorn, etc.
 RUN apk add --no-cache \
       python3 \
       py3-pip \
