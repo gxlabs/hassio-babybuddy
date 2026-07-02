@@ -29,4 +29,3 @@ schema:
   allowed_hosts: str
   csrf_trusted_origins: str
   debug: bool
-image: null
