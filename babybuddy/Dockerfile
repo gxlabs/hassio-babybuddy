@@ -30,9 +30,13 @@ RUN apk add --no-cache \
 
 WORKDIR /app
 
-# Pin the fork ref so add-on version and code are in lockstep.
+# Pin the fork ref so add-on version and code are in lockstep. Bumping
+# BABYBUDDY_REV invalidates Docker's build cache so a fresh clone runs
+# even when only the fork branch (not this file) moved.
 ARG BABYBUDDY_REF=feature/event-images
-RUN git clone --depth 1 --branch ${BABYBUDDY_REF} \
+ARG BABYBUDDY_REV=cbf7a572
+RUN echo "Cloning ${BABYBUDDY_REF}@${BABYBUDDY_REV}" \
+    && git clone --depth 1 --branch ${BABYBUDDY_REF} \
       https://github.com/gxlabs/babybuddy.git /app \
     && pip install --break-system-packages -r requirements.txt \
     && apk del .build-deps
