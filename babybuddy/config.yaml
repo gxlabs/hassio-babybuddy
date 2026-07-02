@@ -5,7 +5,6 @@ description: Baby Buddy fork with per-event image uploads.
 url: https://github.com/gxlabs/hassio-babybuddy
 arch:
   - amd64
-  - aarch64
 init: false
 startup: application
 boot: auto

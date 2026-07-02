@@ -1,4 +1,4 @@
-FROM ghcr.io/hassio-addons/base:latest
+FROM ghcr.io/home-assistant/amd64-base:latest
 
 ENV LANG=C.UTF-8 \
     PYTHONDONTWRITEBYTECODE=1 \
