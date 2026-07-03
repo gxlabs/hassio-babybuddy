@@ -34,7 +34,7 @@ WORKDIR /app
 # BABYBUDDY_REV invalidates Docker's build cache so a fresh clone runs
 # even when only the fork branch (not this file) moved.
 ARG BABYBUDDY_REF=feature/event-images
-ARG BABYBUDDY_REV=db2f1303
+ARG BABYBUDDY_REV=53963f2e
 RUN echo "Cloning ${BABYBUDDY_REF}@${BABYBUDDY_REV}" \
     && git clone --depth 1 --branch ${BABYBUDDY_REF} \
       https://github.com/gxlabs/babybuddy.git /app \

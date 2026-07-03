@@ -1,5 +1,5 @@
 name: Baby Buddy (gxlabs)
-version: "0.1.5"
+version: "0.1.6"
 slug: babybuddy_gxlabs
 description: Baby Buddy fork with per-event image uploads.
 url: https://github.com/gxlabs/hassio-babybuddy
